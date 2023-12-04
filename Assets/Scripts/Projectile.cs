@@ -7,9 +7,11 @@ public class Projectile : MonoBehaviour {
 	public float speed;
 	public float lifeTime;
 
-	private void Start()
+    public GameObject explosion;
+
+    private void Start()
 	{
-		Destroy(gameObject, lifeTime);
+		Invoke("DestroyProjectile", lifeTime);
 	}
 
 	private void Update()
@@ -18,4 +20,10 @@ public class Projectile : MonoBehaviour {
 		transform.Translate(Vector2.up * speed * Time.deltaTime);
 	}
 	
+	private void DestroyProjectile()
+	{
+		//Quaternion.identity -> at what rotation to spawn particle ffect
+		Instantiate(explosion, transform.position, Quaternion.identity);
+		Destroy(gameObject);
+	}
 }
