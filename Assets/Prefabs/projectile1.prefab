@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212810353490310616}
   - component: {fileID: 122091382338243312}
   - component: {fileID: 114965050182925890}
+  - component: {fileID: 61640928497089480}
   m_Layer: 0
   m_Name: projectile1
   m_TagString: Untagged
@@ -42,6 +43,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -44.207}
+--- !u!61 &61640928497089480
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1027210304297518}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.7, y: 6.03}
+    newSize: {x: 4.7, y: 6.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.7, y: 6.03}
+  m_EdgeRadius: 0
 --- !u!114 &114965050182925890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,7 +80,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  lifeTime: 1
+  lifeTime: 2
+  damage: 1
   explosion: {fileID: 1475276918907058, guid: 604ea5a4423cbc948815c53e55772b00, type: 2}
 --- !u!122 &122091382338243312
 Halo:
