@@ -241,6 +241,10 @@ MonoBehaviour:
   speed: 2
   damage: 2
   timeBetweenAttacks: 1
+  pickupChance: 20
+  pickups:
+  - {fileID: 1374333114949474, guid: 6c1fb6536b5267a48b3bf5c2f0d4627a, type: 2}
+  - {fileID: 1374333114949474, guid: 6c1fb6536b5267a48b3bf5c2f0d4627a, type: 2}
   stopDistance: 7
   shotPoint: {fileID: 4724339643355978}
   enemyBullet: {fileID: 1387537794978734, guid: 11c1584727591c64ca56ecc6976ad1e1,

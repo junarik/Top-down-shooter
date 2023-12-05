@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
+    //Щоб було видно в inspector
     [System.Serializable]
     public class Wave
     {
@@ -12,73 +13,68 @@ public class WaveSpawner : MonoBehaviour
         public float timeBetweenSpawns;
     }
 
+    //Тут буде видно в інспекторі скільки я хочу створити хвиль
     public Wave[] waves;
     public Transform[] spawnPoints;
     public float timeBetweenWaves;
+
 
     private Wave currentWave;
     private int currentWaveIndex;
     private Transform player;
 
-    private bool spawningFinished;
-
-    public GameObject boss;
-    public Transform bossSpawnPoint;
-
-    public GameObject healthBar; // Unused variable
+    private bool finishedSpawning;
 
     private void Start()
     {
-        player = GameObject.FindWithTag("Player").transform;
-        StartCoroutine(CallNextWave(currentWaveIndex));
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        StartCoroutine(StartNextWave(currentWaveIndex));
+    }
+    IEnumerator StartNextWave(int index){
+        yield return new WaitForSeconds(timeBetweenWaves);
+        StartCoroutine(SpawnWave(index));
+    }
+
+    IEnumerator SpawnWave (int index) {
+        currentWave = waves[index];
+
+        for(int i = 0; i < currentWave.count;i++)
+        {
+            if(player == null)
+            {
+                yield break;
+            }
+
+            Enemy randomEnemy = currentWave.enemies[Random.Range(0, currentWave.enemies.Length)];
+            Transform randomSpot = spawnPoints[Random.Range(0, spawnPoints.Length)];
+
+            Instantiate(randomEnemy, randomSpot.position, randomSpot.rotation);
+
+            if(i == currentWave.count - 1)
+            {
+                finishedSpawning = true;
+            }
+            else{
+                finishedSpawning = false;
+            }
+
+            yield return new WaitForSeconds(currentWave.timeBetweenSpawns);
+        }
     }
 
     private void Update()
     {
-        if (spawningFinished == true && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        if(finishedSpawning == true && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
-            spawningFinished = false; // corrected variable name
-            if (currentWaveIndex + 1 < waves.Length)
+            finishedSpawning = false;
+            if(currentWaveIndex + 1 < waves.Length)
             {
                 currentWaveIndex++;
-                StartCoroutine(CallNextWave(currentWaveIndex));
+                StartCoroutine(StartNextWave(currentWaveIndex));
             }
-            else
-            {
+            else {
                 Debug.Log("Game FINISHED!!!");
             }
-        }
-    }
-
-    IEnumerator CallNextWave(int waveIndex)
-    {
-        yield return new WaitForSeconds(timeBetweenWaves);
-        StartCoroutine(SpawnWave(waveIndex));
-    }
-
-    IEnumerator SpawnWave(int waveIndex)
-    {
-        currentWave = waves[waveIndex];
-
-        for (int i = 0; i < currentWave.count; i++)
-        {
-            if (player == null)
-            {
-                yield break;
-            }
-            Enemy randomEnemy = currentWave.enemies[Random.Range(0, currentWave.enemies.Length)];
-            Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            Instantiate(randomEnemy, randomSpawnPoint.position, transform.rotation);
-
-            if (i == currentWave.count - 1)
-            {
-                spawningFinished = true;
-            }
-            else
-            {
-                spawningFinished = false;
-            }
-            yield return new WaitForSeconds(currentWave.timeBetweenSpawns);
         }
     }
 }

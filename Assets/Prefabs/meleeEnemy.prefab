@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61395963209067500}
   - component: {fileID: 50935437092601030}
   - component: {fileID: 114431442248435520}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: meleeEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4245633453108438}
   - component: {fileID: 212934106871565492}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4357518611850494}
   - component: {fileID: 212029202015585860}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4148998502941608}
   - component: {fileID: 212774758418294696}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4485298072174724}
   - component: {fileID: 212114075866638180}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4656840686436484}
   - component: {fileID: 212387427806468340}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4932509769261600}
   - component: {fileID: 212631836169658724}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,6 +302,10 @@ MonoBehaviour:
   speed: 2
   damage: 2
   timeBetweenAttacks: 2
+  pickupChance: 99
+  pickups:
+  - {fileID: 1046468992672736, guid: d52e6f0c14086cf4bb8fa43d8aa0a776, type: 2}
+  - {fileID: 1563625540207734, guid: 7fbde15b791f37b42a2d1412d2b1f92c, type: 2}
   stopDistance: 2
   attackSpeed: 2
 --- !u!212 &212029202015585860

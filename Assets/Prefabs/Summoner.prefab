@@ -362,6 +362,9 @@ MonoBehaviour:
   speed: 2
   damage: 2
   timeBetweenAttacks: 2
+  pickupChance: 99
+  pickups:
+  - {fileID: 1374333114949474, guid: 6c1fb6536b5267a48b3bf5c2f0d4627a, type: 2}
   minX: -20
   maxX: 20
   minY: -20
@@ -369,8 +372,8 @@ MonoBehaviour:
   timeBetweenSummons: 5
   enemyToSummon: {fileID: 114706241711320202, guid: f19285ea0e84a8b4aa87e0ad0c27d4e1,
     type: 2}
-  meleeAttackSpeed: 0
-  stopDistance: 0
+  meleeAttackSpeed: 1
+  stopDistance: 5
 --- !u!212 &212030751952572566
 SpriteRenderer:
   m_ObjectHideFlags: 1
