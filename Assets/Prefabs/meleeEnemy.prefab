@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4013762972173502}
   - component: {fileID: 95749227952661408}
-  - component: {fileID: 114314518204258224}
   - component: {fileID: 61395963209067500}
   - component: {fileID: 50935437092601030}
+  - component: {fileID: 114431442248435520}
   m_Layer: 0
   m_Name: meleeEnemy
   m_TagString: Enemy
@@ -286,7 +286,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114314518204258224
+--- !u!114 &114431442248435520
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,14 +294,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1069098708379214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52fddfe9cf5b65147b6af9152b4696a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e430ae656047de4fa394a6d0bd443dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
   player: {fileID: 0}
-  speed: 0
-  damage: 0
-  timeBetweenAttacks: 0
+  speed: 2
+  damage: 2
+  timeBetweenAttacks: 2
+  stopDistance: 2
+  attackSpeed: 2
 --- !u!212 &212029202015585860
 SpriteRenderer:
   m_ObjectHideFlags: 1

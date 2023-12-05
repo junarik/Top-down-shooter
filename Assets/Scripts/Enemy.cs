@@ -10,11 +10,11 @@ public class Enemy : MonoBehaviour {
 	public Transform player;
 
 	public float speed;
-	public int damage = 1;
+	public int damage;
 
 	public float timeBetweenAttacks;
 
-	public void Start()
+	public virtual void Start()
 	{
 		player = GameObject.FindGameObjectWithTag("Player").transform;
 	}
