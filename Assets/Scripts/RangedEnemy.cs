@@ -4,51 +4,56 @@ using UnityEngine;
 
 public class RangedEnemy : Enemy {
 
-	public float stopDistance;
+    public float stopDistance;
+    public GameObject enemyBullet;
+    public Transform shotPoint;
 
-	private float attackTime;
+    float attackTime;
+    Animator anim;
 
-	private Animator anim;
-	public Transform shotPoint;
+    public override void Start()
+    {
+        base.Start();
+        anim = GetComponent<Animator>();
+    }
 
-	public GameObject enemyBullet;
 
-	public override void Start()
-	{
-		base.Start();
-		anim = GetComponent<Animator>();
-	}
-	private void Update()
-	{
-		if(player != null)
-		{
-			if (Vector2.Distance(transform.position, player.position) > stopDistance)
-			{
-				transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-			}			
+    private void Update()
+    {
+        if (player != null)
+        {
+
+            if (Vector2.Distance(transform.position, player.position) > stopDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            }
+
+
             if (Time.time >= attackTime)
             {
                 attackTime = Time.time + timeBetweenAttacks;
-				anim.SetTrigger("Attack");
-            }    
-		}
-		
-	}
+                anim.SetTrigger("attack");
+            }
 
-	public void RangeAttack()
-	{
-		Vector2 direction = player.position - shotPoint.position;
-		
-		//Кут weapon (на скільки градусів повернути, щоб було направленне на курсор)
-		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-		// Vector3.forward -> (Z.Axis)
-		Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward); 
-		
-		
-		shotPoint.rotation = rotation;
+        }
+    }
+    
+    public void RangedAttack () {
 
-		Instantiate(enemyBullet, shotPoint.position, shotPoint.rotation);
+        if (player != null)
+        {
 
-	}
+            Vector2 direction = player.position - shotPoint.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+            shotPoint.rotation = rotation;
+
+            Instantiate(enemyBullet, shotPoint.position, shotPoint.rotation);
+
+        }
+
+    }
+
+
 }

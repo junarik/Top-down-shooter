@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f42312927368066438674615d118c0fa
+guid: 7296b7733f6ce184abfe687ad6ae0a7a
 TextureImporter:
   fileIDToRecycleName:
     21300000: Summoner_0
@@ -8,7 +8,7 @@ TextureImporter:
     21300006: Summoner_3
     21300008: Summoner_4
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 5
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -26,8 +26,6 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
-  streamingMipmaps: 0
-  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -38,7 +36,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: -1
     aniso: -1
-    mipBias: -100
+    mipBias: -1
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -85,6 +83,61 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -92,18 +145,18 @@ TextureImporter:
       name: Summoner_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 482
-        width: 619
-        height: 498
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 29
+        y: 471
+        width: 614
+        height: 517
+      alignment: 9
+      pivot: {x: 0.5057028, y: 0.16135925}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4b5f26d4a7b78d46a029f4c5afce05e
+      spriteID: 1ad95d96b95c7414a88d9ab6d9177f3f
       vertices: []
       indices: 
       edges: []
@@ -112,18 +165,18 @@ TextureImporter:
       name: Summoner_1
       rect:
         serializedVersion: 2
-        x: 671
-        y: 469
-        width: 360
-        height: 485
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 672
+        y: 471
+        width: 361
+        height: 476
+      alignment: 9
+      pivot: {x: 0.044120304, y: 0.28421855}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc41a7cf96816d94ab21d565b0b6d939
+      spriteID: ecaf6c474fec09b48814b34b19d4d6ee
       vertices: []
       indices: 
       edges: []
@@ -132,18 +185,18 @@ TextureImporter:
       name: Summoner_2
       rect:
         serializedVersion: 2
-        x: 195
-        y: 268
-        width: 252
-        height: 158
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 226
+        y: 274
+        width: 190
+        height: 140
+      alignment: 9
+      pivot: {x: 0.8992991, y: 0.9168505}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 913362f85a9b29e45ac9bfed265c34b5
+      spriteID: 912e0f9258883304ab72de5c0d3e44dc
       vertices: []
       indices: 
       edges: []
@@ -152,18 +205,18 @@ TextureImporter:
       name: Summoner_3
       rect:
         serializedVersion: 2
-        x: 221
-        y: 56
-        width: 178
-        height: 166
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 276
+        y: 65
+        width: 56
+        height: 158
+      alignment: 9
+      pivot: {x: 0.5416854, y: 0.9210717}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2099123c44beb5f438f57f7db173c213
+      spriteID: 6ad56353472c17143a0a877ff113bd1f
       vertices: []
       indices: 
       edges: []
@@ -172,18 +225,18 @@ TextureImporter:
       name: Summoner_4
       rect:
         serializedVersion: 2
-        x: 586
-        y: 69
-        width: 427
-        height: 375
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 578
+        y: 57
+        width: 437
+        height: 372
+      alignment: 9
+      pivot: {x: 0.47596177, y: 0.20120145}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9380708ce3efe504eab4cdca3997848a
+      spriteID: 3d0cc97380b99334f93b1bbc4dc089c6
       vertices: []
       indices: 
       edges: []
@@ -191,14 +244,12 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b53fef53865b3304686dee37a32d99f6
+    spriteID: ddd243c9a03c16d479d88105196594f1
     vertices: []
     indices: 
     edges: []
     weights: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

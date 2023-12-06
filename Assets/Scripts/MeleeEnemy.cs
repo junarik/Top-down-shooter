@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeEnemy : Enemy
-{
+public class MeleeEnemy : Enemy {
 
     public float stopDistance;
 
@@ -11,41 +10,49 @@ public class MeleeEnemy : Enemy
 
     public float attackSpeed;
 
-
-    public void Update()
+    private void Update()
     {
-        if (player != null)
-        {
+         
+        if(player != null) {
+
             if (Vector2.Distance(transform.position, player.position) > stopDistance)
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-            }
-            else
-            {
+            } else {
+
                 if (Time.time >= attackTime)
                 {
-                    StartCoroutine(Attack());
                     attackTime = Time.time + timeBetweenAttacks;
+                    StartCoroutine(Attack());
                 }
+
             }
-        }  
+
+        }
+
+    }
+    
+    IEnumerator Attack() {
+
+        player.GetComponent<Player>().TakeDamage(damage);
+
+        Vector2 originalPosition = transform.position;
+        Vector2 targetPosition = player.position;
+
+        // час Ї"анімованого"Ї стрибка
+        float percent = 0f;
+        while(percent <= 1) {
+            percent += Time.deltaTime * attackSpeed;
+
+            // для плавного переходу
+            float interpolation = (-Mathf.Pow(percent, 2) + percent) * 4;
+
+            //Стрибок
+            transform.position = Vector2.Lerp(originalPosition, targetPosition, interpolation);
+            yield return null;
+        }
     }
 
-    IEnumerator Attack()
-    {
-            player.GetComponent<Player>().TakeDamage(damage);
 
-            Vector2 originalPosition = transform.position;
-            Vector2 targetPosition = player.position;
-
-            float percent = 0;
-            while (percent <= 1)
-            {
-                percent += Time.deltaTime * attackSpeed;
-                float formula = (-Mathf.Pow(percent, 2) + percent) * 4;
-                transform.position = Vector2.Lerp(originalPosition, targetPosition, formula);
-                yield return null;
-            }
-    }
 
 }

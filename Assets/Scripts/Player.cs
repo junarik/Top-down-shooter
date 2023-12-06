@@ -2,87 +2,122 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
 
-	public float speed;
+    public float speed;
 
-	private Rigidbody2D rb;
-	private Animator anim;
+    private Rigidbody2D rb;
 
-	private Vector2 moveAmount;
+    private Vector2 moveAmount;
+    private Animator anim;
 
-	public int health = 1;
+    public int health;
 
-	public Image[] hearts;
-	public Sprite fullHeart;
-	public Sprite emptyHeart;
+    //В редакторі для кожного окремого сердця
+    public GameObject[] hearts;
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
 
-	private void Start()
-	{
-		anim = GetComponent<Animator>();
-		rb = GetComponent<Rigidbody2D>();
-	}
+    public Animator hurtAnim;
 
-	private void Update()
-	{
-		Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-		moveAmount = moveInput.normalized * speed;
 
-		if(moveInput != Vector2.zero)
-		{
-			anim.SetBool("isRunning", true);
-		}
-		else{
-			anim.SetBool("isRunning", false);
-		}
-	}
+    private SceneTransition sceneTransitions;
 
-	private void FixedUpdate()
-	{
-		rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
-	}
+    public GameObject hurtSound;
 
-	public void TakeDamage(int damageAmount){
-		health = health - damageAmount;
-		UpdateHealthUI(health);
+    public GameObject trail;
+    private float timeBtwTrail;
+    public float startTimeBtwTrail;
+    public Transform groundPos;
 
-		if(health <= 0)
-		{
-			Destroy(gameObject);
-		}
-	}
+    private void Start()
+    {
+        //Підключимо анімації самого гравця
+        anim = GetComponent<Animator>();
 
-	public void ChangeWeapon (Weapon weaponToEquip)
-	{
-		Destroy(GameObject.FindGameObjectWithTag("Weapon"));
-		Instantiate(weaponToEquip, transform.position, transform.rotation, transform);
-	}
+        // Підключимо Фізику
+        rb = GetComponent<Rigidbody2D>();
 
-	void UpdateHealthUI(int currentHealth)
-	{
-		for(int i = 0; i < hearts.Length; i++)
-		{
-			if(i < currentHealth)
-			{
-				hearts[i].sprite = fullHeart;
-			}
-			else {
-				hearts[i].sprite = emptyHeart;
-			}
-		}
-	}
+        //Підключимо скрипт SceneTransition
+        sceneTransitions = FindObjectOfType<SceneTransition>();
+    }
 
-	public void Heal(int healAmount)
-	{
-		if(health + healAmount > 5)
-		{
-			health = 5;
-		}
-		else{
-			health += healAmount;
-		}
-		UpdateHealthUI(health);
-		
-	}
+    private void Update()
+    {
+        Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        
+        // Швидкість, + враховуємо діагональ, тому normalized, щоб була 1
+        moveAmount = moveInput.normalized * speed;
+        if (moveInput != Vector2.zero)
+        {
+            if (Time.time >= timeBtwTrail)
+            {
+                Instantiate(trail, groundPos.position, Quaternion.identity);
+                timeBtwTrail = Time.time + startTimeBtwTrail;
+            }
+            anim.SetBool("isRunning", true);
+        }
+        else {
+            anim.SetBool("isRunning", false);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
+    }
+
+    public void TakeDamage(int amount)
+    {
+        Instantiate(hurtSound, transform.position, Quaternion.identity);
+        health -= amount;
+        UpdateHealthUI(health);
+
+        //Визвається окрема панель для одного мигання
+        hurtAnim.SetTrigger("hurt");
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+            sceneTransitions.LoadScene("Lose");
+        }
+    }
+
+    //визивається у pickup weapons
+    public void ChangeWeapon(Weapon weaponToEquip) {
+        Destroy(GameObject.FindGameObjectWithTag("Weapon"));
+
+        
+        Instantiate(weaponToEquip, transform.position, transform.rotation, transform);
+    }
+
+    void UpdateHealthUI(int currentHealth) {
+
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i < currentHealth)
+            {
+                hearts[i].GetComponent<Image>().sprite = fullHeart;
+            } else {
+                hearts[i].GetComponent<Image>().sprite = emptyHeart;
+            }
+
+        }
+
+    }
+
+    //визивається у pickup hurts
+    public void Heal(int healAmount) {
+        if (health + healAmount > 5)
+        {
+            health = 5;
+        } else {
+            health += healAmount;
+        }
+        UpdateHealthUI(health);
+    }
+
+
 }

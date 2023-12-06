@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 286223cb2fe0f4d4a8ec673e7e6772d4
+guid: 4d36f74f9e4aa0247911c8eac35d74d1
 TextureImporter:
   fileIDToRecycleName:
     21300000: particles_0
@@ -9,7 +9,7 @@ TextureImporter:
     21300008: particles_4
     21300010: particles_5
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 5
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -27,8 +27,6 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
-  streamingMipmaps: 0
-  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -39,7 +37,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: -1
     aniso: -1
-    mipBias: -100
+    mipBias: -1
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -86,6 +84,61 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -93,10 +146,10 @@ TextureImporter:
       name: particles_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 36
-        width: 156
-        height: 148
+        x: 43
+        y: 54
+        width: 116
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -104,7 +157,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c35db36566bbd854e9495f1ec68fb902
+      spriteID: 08140be09dfb24941b9c840a586ae10a
       vertices: []
       indices: 
       edges: []
@@ -113,10 +166,10 @@ TextureImporter:
       name: particles_1
       rect:
         serializedVersion: 2
-        x: 197
-        y: 56
-        width: 120
-        height: 111
+        x: 200
+        y: 62
+        width: 115
+        height: 101
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,7 +177,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e952f588f01f5944a8960a4664ce146
+      spriteID: 01850115a691528439a1fa8582da7b3a
       vertices: []
       indices: 
       edges: []
@@ -133,10 +186,10 @@ TextureImporter:
       name: particles_2
       rect:
         serializedVersion: 2
-        x: 343
-        y: 44
-        width: 151
-        height: 152
+        x: 349
+        y: 51
+        width: 139
+        height: 143
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,7 +197,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4657a4580129644f9d6baf421ee15f2
+      spriteID: 8e01991c35585744a8bbbf970525dbec
       vertices: []
       indices: 
       edges: []
@@ -153,10 +206,10 @@ TextureImporter:
       name: particles_3
       rect:
         serializedVersion: 2
-        x: 542
-        y: 43
-        width: 146
-        height: 160
+        x: 548
+        y: 50
+        width: 133
+        height: 148
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,7 +217,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73138fceb8aec0445ae550ef0aa467ae
+      spriteID: 0d0ec5bb76fd1a84ca6e335a91848a52
       vertices: []
       indices: 
       edges: []
@@ -173,10 +226,10 @@ TextureImporter:
       name: particles_4
       rect:
         serializedVersion: 2
-        x: 726
-        y: 70
-        width: 60
-        height: 123
+        x: 734
+        y: 72
+        width: 48
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,7 +237,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a44e6bb2c2163f4b9d917a44ce2a102
+      spriteID: a48874c306161e1419612a13d4553253
       vertices: []
       indices: 
       edges: []
@@ -193,10 +246,10 @@ TextureImporter:
       name: particles_5
       rect:
         serializedVersion: 2
-        x: 825
-        y: 57
-        width: 121
-        height: 144
+        x: 826
+        y: 68
+        width: 114
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,7 +257,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5ea701ad93210a4596d774fc536e937
+      spriteID: 8aa9e9604005a474da114fc5ba0817cc
       vertices: []
       indices: 
       edges: []
@@ -212,14 +265,12 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a98db7faa0c16a146b40a4591a386c8e
+    spriteID: 7b883d2f94490ac4db7f3353834d57df
     vertices: []
     indices: 
     edges: []
     weights: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

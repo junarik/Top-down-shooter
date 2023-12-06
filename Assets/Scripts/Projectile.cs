@@ -4,36 +4,57 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour {
 
-	public float speed;
-	public float lifeTime;
-	public int damage;
+    public float speed;
+    public float lifeTime;
+    public int damage;
 
     public GameObject explosion;
 
+    public GameObject soundObject;
+
+    public GameObject trail;
+    private float timeBtwTrail;
+    public float startTimeBtwTrail;
+
     private void Start()
-	{
-		Invoke("DestroyProjectile", lifeTime);
-	}
+    {
+        Invoke("DestroyProjectile", lifeTime);
+        Instantiate(soundObject, transform.position, transform.rotation);
+        Instantiate(explosion, transform.position, Quaternion.identity);
+    }
 
-	private void Update()
-	{
-		//not for playing just moving forward, so the difference
-		transform.Translate(Vector2.up * speed * Time.deltaTime);
-	}
-	
-	private void DestroyProjectile()
-	{
-		//Quaternion.identity -> at what rotation to spawn particle ffect
-		Instantiate(explosion, transform.position, Quaternion.identity);
-		Destroy(gameObject);
-	}
+    private void Update()
+    {
 
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		if(collision.tag == "Enemy")
-		{
-			collision.GetComponent<Enemy>().TakeDamage(damage);
-			DestroyProjectile();
-		}
-	}
+        if (Time.time >= timeBtwTrail) {
+            Instantiate(trail, transform.position, Quaternion.identity);
+            timeBtwTrail = Time.time + startTimeBtwTrail;
+        }
+
+        // об'єкт має напрямок через Weapon.ShotPoint і верх задається автоматично відносно parent об'єкту
+        transform.Translate(Vector2.up * speed * Time.deltaTime);
+    }
+
+    void DestroyProjectile() {
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+         if (other.tag == "Enemy")
+        {
+            other.GetComponent<Enemy>().TakeDamage(damage);
+            DestroyProjectile();
+        }
+
+        if (other.tag == "boss")
+        {
+            other.GetComponent<Boss>().TakeDamage(damage);
+            DestroyProjectile();
+        }
+
+    }
+
+
 }

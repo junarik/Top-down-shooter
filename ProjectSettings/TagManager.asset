@@ -5,7 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - point
+  - boss
+  - point
+  - boss
   - Weapon
+  - Slider
   layers:
   - Default
   - TransparentFX
@@ -17,9 +22,9 @@ TagManager:
   - 
   - Player
   - Enemy
-  - Stopper
-  - Weapon
   - 
+  - boss
+  - boss
   - 
   - 
   - 
@@ -42,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Weapon
+    uniqueID: 2257309829
     locked: 0

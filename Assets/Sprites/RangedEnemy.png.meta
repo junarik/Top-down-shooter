@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: e6b1681f568a7f24e8238a1b217ff222
+guid: 0067a1c90bc9cdf4d880d8376b190648
 TextureImporter:
   fileIDToRecycleName:
     21300000: RangedEnemy_0
     21300002: RangedEnemy_1
     21300004: RangedEnemy_2
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 5
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -24,8 +24,6 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
-  streamingMipmaps: 0
-  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -36,7 +34,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: -1
     aniso: -1
-    mipBias: -100
+    mipBias: -1
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -48,9 +46,9 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 75
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -83,6 +81,61 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -90,18 +143,18 @@ TextureImporter:
       name: RangedEnemy_0
       rect:
         serializedVersion: 2
-        x: 88
-        y: 645
-        width: 341
-        height: 277
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 85
+        y: 635
+        width: 313
+        height: 275
+      alignment: 9
+      pivot: {x: 0.962429, y: 0.4057322}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a7d7b9a840106142993c1ff001a1a73
+      spriteID: 86794e6cd0380bc4482bca1a98209d2b
       vertices: []
       indices: 
       edges: []
@@ -110,18 +163,18 @@ TextureImporter:
       name: RangedEnemy_1
       rect:
         serializedVersion: 2
-        x: 18
-        y: 106
-        width: 550
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 22
+        y: 58
+        width: 544
+        height: 573
+      alignment: 9
+      pivot: {x: 0.4632744, y: 0.15534438}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 038a8d5f023a4a842b5d7e3e4f87848c
+      spriteID: 3d851f7266601274ba72ac0fce7a2dd3
       vertices: []
       indices: 
       edges: []
@@ -130,18 +183,18 @@ TextureImporter:
       name: RangedEnemy_2
       rect:
         serializedVersion: 2
-        x: 599
-        y: 38
-        width: 526
-        height: 520
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 586
+        y: 43
+        width: 544
+        height: 586
+      alignment: 9
+      pivot: {x: 0.4910726, y: 0.13155237}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 816f8c8e9f7bc984db4aba46e49f63b3
+      spriteID: 0c00cd56da6421c4f8b63a464e573e71
       vertices: []
       indices: 
       edges: []
@@ -149,14 +202,12 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8beb10c921caae6459f8be8dd163674a
+    spriteID: f508e827b31a0704d8f88baa881eb0a3
     vertices: []
     indices: 
     edges: []
     weights: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

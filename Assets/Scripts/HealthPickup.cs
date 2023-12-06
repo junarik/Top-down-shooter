@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class HealthPickup : MonoBehaviour {
 
-	Player playerScript;
-	public int healAmount;
+    Player playerScript;
+    public int healAmount;
 
-	private void Start()
-	{
-		playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-	}
-	void OnTriggerEnter2D(Collider2D collision)
-	{
-		if(collision.tag == "Player")
-		{
-			playerScript.Heal(healAmount);
-			Destroy(gameObject);
-		}
-	}
-	
+    public GameObject effect;
+
+    private void Start()
+    {
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            Instantiate(effect, transform.position, Quaternion.identity);
+            playerScript.Heal(healAmount);
+            Destroy(gameObject);
+        }
+    }
+
 }
